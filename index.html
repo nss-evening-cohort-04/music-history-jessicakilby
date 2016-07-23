@@ -4,10 +4,112 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
 
+	<nav class="top-nav">
+		<ul>
+			<li><a href="#">View Music</a></li>
+			<li> | </li>
+			<li><a href="#">Add Music</a></li>
+			<li> | </li>
+			<li><a href="#">Profile</a></li>
+		</ul>
+	</nav>
+
+	<nav class="side-nav">
+	<h2>Artist:</h2><br>
+	<select name="artist">
+		<option value="">Architecture In Helsinki</option>
+		<option value="the-strokes">The Strokes</option>
+		<option value="mgmt">Beastie Boys</option>
+		<option value="empire-of-the-sun">Cut Copy</option>
+		<option value="two-door-cinema-club">The Elwins</option>
+		<option value="two-door-cinema-club">Israel Kamakawiwo'ole</option>
+	</select>
+	<h2>Album:</h2><br>
+	<select name="album">
+		<option value="moment">Moment Bends</option>
+		<option value="lisenced">Licensed to Ill</option>
+		<option value="first">First Impressions of Earth</option>
+		<option value="zonoscope">Zonoscope</option>
+		<option value="and">And I Thank You</option>
+		<option value="alone">Alone in IZ World</option>
+	</select>
+	<h2>Genre:</h2>
+	<form>
+		<input type="radio" name="genre" value="rock">Rock<br>
+		<input type="radio" name="genre" value="pop">Pop<br>
+		<input type="radio" name="genre" value="alternative">Alternative<br>
+		<input type="radio" name="genre" value="world">World<br>
+		<input type="radio" name="genre" value="indie-rock">Indie Rock<br>
+		<input type="radio" name="genre" value="hip-hop">Hip-Hop/Rap<br>
+	</form><br>
+	<button>Filter</button>
+	</nav>
+
+	 <section class="main">
+	 	<div class="song-info">
+	 		<h2>Escapee</h2>
+	 		<div>Architecture in Helsinki</div>
+	 		<div> | </div>
+	 		<div>Moment Bends</div>
+	 		<div> | </div>
+	 		<div>Alternative</div>
+	 	</div>
+	 	<div class="song-info">
+	 		<h2>Brass Monkey</h2>
+	 		<section>	
+		 		<div>Beastie Boys</div>
+		 		<div> | </div>
+		 		<div>Licensed to Ill</div>
+		 		<div> | </div>
+		 		<div>Hip-Hop/Rap</div>
+		 	</section>	
+	 	</div>
+	 	<div class="song-info">
+	 		<h2>You Only Live Once</h2>
+	 		<section>
+		 		<div>The Strokes</div>
+		 		<div> | </div>
+		 		<div> First Impressions of Earth</div>
+		 		<div> | </div>
+		 		<div> Indie Rock</div>
+		 	</section>
+	 	</div>
+	 	<div class="song-info">
+	 		<h2>Take Me Over</h2>
+	 		<section>
+		 		<div>Cut Copy</div>
+		 		<div> | </div>
+		 		<div>Zonoscope</div>
+		 		<div> | </div>
+		 		<div>Pop</div>
+		 	</section>
+	 	</div>
+	 	<div class="song-info">
+	 		<h2>Forgetful Assistance</h2>
+	 		<section>
+		 		<div>The Elwins</div>
+		 		<div> | </div>
+		 		<div>And I Thank You</div>
+		 		<div> | </div>
+		 		<div>Rock</div>
+		 	</section>
+	 	</div>
+	 	<div class="song-info">
+	 		<h2>Somewhere Over the Rainbow</h2>
+	 		<section>
+		 		<div>Israel Kamakawiwo'ole</div>
+		 		<div> | </div>
+		 		<div>Alone in IZ World</div>
+		 		<div> | </div>
+		 		<div>World</div>
+		 	</section>
+	 	</div>
+	 </section>
 
 </body>
 </html>
