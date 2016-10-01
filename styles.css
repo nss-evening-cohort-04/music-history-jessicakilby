@@ -1,0 +1,70 @@
+/*General===========================*/
+
+body {
+	font-family: "Verdana", serif;
+	padding-left: 10px;
+
+}
+
+/*Top Navigation=====================*/
+
+.top-nav {
+	background-color: #FFB4B0;
+	border: 1px solid black;
+	margin: 10px;
+}
+
+ul li {
+	list-style-type: none;
+	display: inline;
+}
+
+a:link {
+	color: orange;
+}
+
+a:visited {
+	color: blue;
+}
+
+a:hover {
+
+}
+
+a:active {
+	color: orange;
+}
+
+
+/*Side Navigation====================*/
+
+.side-nav {
+	background-color: #4DD7FA;
+	border: 1px solid black;
+	margin: 10px;	
+	padding: 5px;
+	height: 30%;
+	width: 23%;
+	float: left;	
+}
+
+.genre input{
+	display: inline-block;
+}
+
+/*Main================================*/
+
+.main {
+	background-color: #FEFAC0;
+	color: #785616;
+	border: 1px solid black;
+	margin: 10px;
+	padding: 5px;
+	height: 30%;
+	width: 70%;
+	float: right;
+}
+
+section div {
+	display: inline;
+}
