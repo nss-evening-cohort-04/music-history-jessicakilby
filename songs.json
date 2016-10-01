@@ -1,0 +1,40 @@
+{ 
+	"songs": [
+		{
+			"song_title": "Escapee",
+			"band": "Architecture in Helsinki",
+			"album": "Licensed to Ill",
+			"genre": "Alternative"
+		},
+		{
+			"song_title": "Brass Monkey",
+			"band": "Beastie Boys",
+			"album": "Moment Bends",
+			"genre": "Hip-Hop/Rap"
+		},
+		{
+			"song_title": "You Only Live Once",
+			"band": "The Strokes",
+			"album": "First Impressions of Earth",
+			"genre": "Indie Rock"
+		},
+		{
+			"song_title": "Take Me Over",
+			"band": "Cut Copy",
+			"album": "Zonoscope",
+			"genre": "Pop"
+		},
+		{
+			"song_title": "Forgetful Assistance",
+			"band": "The Elwins",
+			"album": "And I Thank You",
+			"genre": "Rock"
+		},
+		{
+			"song_title": "Somewhere Over the Rainbow",
+			"band": "Israel Kamakawiwo'ole",
+			"album": "Alone in IZ World",
+			"genre": "World"
+		}
+	]
+}
