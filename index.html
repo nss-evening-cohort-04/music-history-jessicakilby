@@ -11,13 +11,13 @@
 
 	<nav class="top-nav">
 		<ul>
-			<li><a href="index.html" id="list">List Music</a></li>
+			<li><a href="#" id="link-list">List Music</a></li>
 			<li> | </li>
-			<li><a href="add.html" id="add">Add Music</a></li>
+			<li><a href="#" id="link-add">Add Music</a></li>
 		</ul>
 	</nav>
 
-	<nav class="side-nav">
+	<nav class="side-nav" id="hide-nav">
 		<h2>Artist:</h2><br>
 		<select name="artist">
 			<option value="">Architecture In Helsinki</option>
@@ -47,10 +47,23 @@
 		</div>
 	</nav>
 
-	 <section class="main">
-	 	<div id="output"></div>
-	 	
-	 </section>
-	 <script type="text/javascript" src="songs.js"></script>
+	<section class="visable main" id="list-view">
+		<h2>List Music</h2>
+		<div id="output"></div>
+	</section>
+
+	<section class="hidden main" id="add-view">
+	<h2>Add New Music</h2></br>
+		<div class="add">
+			<label>Song title: <input type="text" id="title"></label></br>
+			<label>Artist: <input type="text" id="artist"></label></br>
+			<label>Album: <input type="text" id="album"></label></br>
+			<button id="button" type="submit">Add</button>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="list.js"></script>
+	<script type="text/javascript" src="add.js"></script>
+	<script type="text/javascript" src="songs.js"></script>
 </body>
 </html>
