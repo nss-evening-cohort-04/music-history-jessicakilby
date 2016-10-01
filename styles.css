@@ -98,3 +98,7 @@ section div {
 	float: right;
 	margin-right: 44%;
 }
+#add-view h2 {
+	text-align: center;
+	color: teal;
+}
