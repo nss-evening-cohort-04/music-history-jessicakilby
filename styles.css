@@ -11,7 +11,7 @@ body {
 .top-nav {
 	background-color: #FFB4B0;
 	border: 1px solid black;
-	margin: 15px;
+	margin: 10px;
 }
 
 ul li {
@@ -41,10 +41,15 @@ a:active {
 .side-nav {
 	background-color: #4DD7FA;
 	border: 1px solid black;
-	margin: 15px;	
-	height: 900px;
-	width: 25%;
-	float: left;
+	margin: 10px;	
+	padding: 5px;
+	height: 30%;
+	width: 23%;
+	float: left;	
+}
+
+.genre input{
+	display: inline-block;
 }
 
 /*Main================================*/
@@ -53,8 +58,9 @@ a:active {
 	background-color: #FEFAC0;
 	color: #785616;
 	border: 1px solid black;
-	margin: 15px;
-	height: 900px;
+	margin: 10px;
+	padding: 5px;
+	height: 30%;
 	width: 70%;
 	float: right;
 }
