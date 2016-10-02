@@ -57,7 +57,7 @@ h2 {
 	border: 1px solid black;
 	margin: 10px;	
 	padding: 5px;
-	height: 400px;
+	height: 100;
 	width: 23%;
 	float: left;	
 }
@@ -74,16 +74,26 @@ h2 {
 	border: 1px solid black;
 	margin: 10px;
 	padding: 5px;
-	height: 400px;
+	height: 100%;
 	width: 70%;
 	float: right;
 }
 
-section div {
+div.dom {
+	margin: 5px 0;
+	padding: 5px 0;
+}
+.songWrap {
 	display: inline;
+	/*clear: left;*/
+}
+.delete {
+	/*float: right;*/
+	display: inline;
+	clear: right;
 }
 
-/*Add Music==========================*/
+/*Add View Music==========================*/
 .add {
 	margin: auto;
 	width: 50%;
@@ -97,4 +107,8 @@ section div {
 #button {
 	float: right;
 	margin-right: 44%;
+}
+#add-view h2 {
+	text-align: center;
+	color: teal;
 }
