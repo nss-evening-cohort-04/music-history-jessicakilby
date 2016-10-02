@@ -1,4 +1,5 @@
 var songs = [];
+var counter = 0
 var songsDom =  document.getElementById("output");
 var deleteButton = document.getElementsByClassName("delete");
 
@@ -12,7 +13,9 @@ songs[songs.length] = "Something Good Can Work - by Two Door Cinema Club on the 
 
 
 for (var i = 0; i < songs.length; i++) {
-	songsDom.innerHTML += `<div class="dom">${songs[i]}<button class="delete">Delete</button></div>`;
+	counter += 1;
+	var songsArray = `<div id="${counter}" class="dom">${songs[i]}</div><button class="delete">Delete</button>`;
+	songsDom.innerHTML += `<div id="songWrap">${songsArray}</div>`;
 	deleteListener();
 }
 
@@ -20,24 +23,22 @@ var songTitle = document.getElementById("title");
 var songArtist = document.getElementById("artist");
 var songAlbum = document.getElementById("album");
 var submitButton = document.getElementById("button");
-var counter = 0
 
 function printNewSong(){
 	counter += 1;
 	var title = songTitle.value;
 	var artist = songArtist.value;
 	var album = songAlbum.value;
-	var newSong = `<div id="${counter}" class="dom">${title}" - by ${artist} on the album ${album}`;
-	newSong += `<button class="delete">Delete</button></div>`;
-	songsDom.innerHTML += newSong;
+	var newSong = `<div id="${counter}" class="dom">${title} - by ${artist} on the album ${album}</div><button class="delete">Delete</button>`;
+	songsDom.innerHTML += `<div id="songWrap">${newSong}</div>`;
 	pushNewSong();
 	deleteListener();
 }
 function pushNewSong(){
-	var newSong = document.getElementById(counter).innerHTML;
-	console.log("newSong", newSong);
+
+	var newSong = document.getElementById(counter).innerText;
+	// console.log("newSong line 40", newSong);
 	songs.push(newSong);
-	console.log("pushed new songs", songs);
 }
 
 function enterKeyPressed(keypress){
@@ -60,9 +61,8 @@ function parseJSONSongs() {
 		counter += 1;
 		currentJson = jsonSongs.songs[i];
 
-		var printJson = `<div id="${counter}" class="dom">${currentJson.song_title} - by ${currentJson.band} on the album ${currentJson.album}`;
-		printJson += `<button class="delete">Delete</button></div>`;
-		songsDom.innerHTML += printJson;
+		var printJson = `<div id="${counter}" class="dom">${currentJson.song_title} - by ${currentJson.band} on the album ${currentJson.album}</div><button class="delete">Delete</button>`;
+		songsDom.innerHTML += `<div id="songWrap">${printJson}</div>`;
 		pushJsonSong();
 		deleteListener();
 	};
@@ -80,16 +80,15 @@ function deleteListener() {
 	}
 }
 
-function deleteSong() {
-	console.log("this", this.parentNode.innerHTML);
-	console.log("songs index", indexOf(this));
-	var parentDiv = this.parentNode;
-	this.parentNode.parentNode.removeChild(parentDiv);
-	// songs.splice(0, this.parentNode.innerHTML);
-	arrayLook();
-}
-function arrayLook() {
-	console.log("songs", songs);
+function deleteSong(event) {
+	// console.log("this.parentNode.innerText", this.previousSibling.innerText);
+	// console.log("this.previousSibling.id", this.previousSibling.id);
+	var deleteButt = this.parentNode;
+	deleteButt.parentNode.removeChild(deleteButt);
+	var arrayIndex = songs.indexOf(this.previousSibling.innerText);
+	// console.log("arrayIndex", arrayIndex);
+	songs.splice(arrayIndex, 1);
+	// console.log("songs", songs);
 }
 
 var deleteButton = document.getElementsByClassName("delete");
