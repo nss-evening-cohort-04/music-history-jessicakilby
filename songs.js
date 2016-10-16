@@ -79,31 +79,36 @@ myRequest.open("GET", "songs.json");
 myRequest.send();
 
 //===Songs added from songs2.json and then added to array===============
-var json2Songs;
-function parseJson2Songs() {
-	json2Songs = JSON.parse(this.responseText);
-	var currentJson;
-	for (var i = 0; i < json2Songs.songs.length; i++) {
-		counter += 1;
-		currentJson = json2Songs.songs[i];
+var moreButton = document.getElementById("more");
 
-		var printJson = `<div id="${counter}" class="dom">${currentJson.song_title} - by ${currentJson.band} on the album ${currentJson.album}</div><button class="delete">Delete</button>`;
-		songsDom.innerHTML += `<div id="songWrap">${printJson}</div>`;
-		pushJsonSong();
-		deleteListener();
-	};
+function moreSongs () {
+	var json2Songs;
+	function parseJson2Songs() {
+		json2Songs = JSON.parse(this.responseText);
+		var currentJson;
+		for (var i = 0; i < json2Songs.songs.length; i++) {
+			counter += 1;
+			currentJson = json2Songs.songs[i];
+
+			var printJson = `<div id="${counter}" class="dom">${currentJson.song_title} - by ${currentJson.band} on the album ${currentJson.album}</div><button class="delete">Delete</button>`;
+			songsDom.innerHTML += `<div id="songWrap">${printJson}</div>`;
+			pushJsonSong();
+			deleteListener();
+		};
+	}
+
+	function pushJsonSong(){
+		var newJsonSong = document.getElementById(counter).innerHTML;
+			// console.log("newJsonSong", newJsonSong);
+			songs.push(newJsonSong);
+	}
+
+	var myRequest = new XMLHttpRequest();
+	myRequest.addEventListener("load", parseJson2Songs);
+	myRequest.open("GET", "songs2.json");
+	myRequest.send();
 }
-
-function pushJsonSong(){
-	var newJsonSong = document.getElementById(counter).innerHTML;
-		// console.log("newJsonSong", newJsonSong);
-		songs.push(newJsonSong);
-}
-
-var myRequest = new XMLHttpRequest();
-myRequest.addEventListener("load", parseJson2Songs);
-myRequest.open("GET", "songs2.json");
-myRequest.send();
+moreButton.addEventListener("click", moreSongs);
 
 //===Delete from DOM/array function for all songs==============
 var deleteButton = document.getElementsByClassName("delete");
