@@ -1,0 +1,40 @@
+{ 
+	"songs": [
+		{
+			"song_title": "Good to Sea",
+			"band": "Pinback",
+			"album": "Autumn of the Seraphs",
+			"genre": "Alternative"
+		},
+		{
+			"song_title": "Heads Will Roll",
+			"band": "Yeah Yeah Yeahs",
+			"album": "It's Blitz!",
+			"genre": "Alternative"
+		},
+		{
+			"song_title": "Say It Ain't So",
+			"band": "Weezer",
+			"album": "Weezer",
+			"genre": "Rock"
+		},
+		{
+			"song_title": "Long Distance Call",
+			"band": "Phoenix",
+			"album": "It's Never Been Like That",
+			"genre": "Pop"
+		},
+		{
+			"song_title": "Animal",
+			"band": "Miike Snow",
+			"album": "Miike Snow",
+			"genre": "Alternative"
+		},
+		{
+			"song_title": "Something Good Can Work",
+			"band": "Two Door Cinema Club",
+			"album": "Winter",
+			"genre": "Alternative"
+		}
+	]
+}
