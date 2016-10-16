@@ -95,7 +95,7 @@ div#songWrap {
 	padding: 5px;
 	width: 95%;
 }
-.delete {
+.delete, #more {
 	display: inline;
 	float: right;
 	clear: right;
