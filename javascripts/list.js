@@ -1,6 +1,9 @@
+console.log("listview");
 var listLink = document.getElementById("link-list");
 var listView = document.getElementById("list-view");
 var hideNav = document.getElementById("hide-nav");
+
+listView.scrollTop = listView.scrollHeight;
 
 listLink.addEventListener("click", function(event) {
   event.preventDefault();

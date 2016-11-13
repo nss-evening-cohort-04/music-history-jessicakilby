@@ -1,8 +1,8 @@
 //===Songs added from orginal array============================
-var songs = [];
+// var songs = [];
 var counter = 0
-var songsDom =  document.getElementById("output");
-var deleteButton = document.getElementsByClassName("delete");
+var songsDom =  $("#output");
+var deleteButton = $(".delete");
 
 songs[songs.length] = "Long Distance Call - by Phoenix on the album It's Never Been Like That"
 songs[songs.length] = "Eat That Up, Its Good for You - by Two Door Cinema Club on the album Tourist History";
@@ -16,24 +16,24 @@ songs[songs.length] = "Stolen Dance - by Milky Chance on the album Sadnecessary"
 for (var i = 0; i < songs.length; i++) {
 	counter += 1;
 	var songsArray = `<div id="${counter}" class="dom">${songs[i]}</div><button class="delete">Delete</button>`;
-	songsDom.innerHTML += `<div id="songWrap">${songsArray}</div>`;
+	songsDom.html(`<div id="songWrap">${songsArray}</div>`);
 	deleteListener();
 }
 
 //===Songs added by user and then added to array==================
-var songTitle = document.getElementById("title");
-var songArtist = document.getElementById("artist");
-var songAlbum = document.getElementById("album");
-var submitButton = document.getElementById("button");
+var songTitle = $("#title");
+var songArtist = $("#artist");
+var songAlbum = $("#album");
+var submitButton = $("#button");
 
 function printNewSong(){
 	counter += 1;
-	var title = songTitle.value;
-	var artist = songArtist.value;
-	var album = songAlbum.value;
+	var title = songTitle.val();
+	var artist = songArtist.val();
+	var album = songAlbum.val();
 	var newSong = `<div id="${counter}" class="dom">${title} - by ${artist} on the album ${album}</div><button class="delete">Delete</button>`;
-	songsDom.innerHTML += `<div id="songWrap">${newSong}</div>`;
-	var newSong = document.getElementById(counter).innerText;
+	songsDom.html(`<div id="songWrap">${newSong}</div>`);
+	var newSong = $(counter).text();
 	songs.push(newSong);
 	deleteListener();
 	// console.log("songs", songs);
@@ -42,14 +42,14 @@ function printNewSong(){
 function enterKeyPressed(keypress){
 	if (keypress.which === 13) {
 		printNewSong();
-		songTitle.value = "";
-		songArtist.value = "";
-		songAlbum.value = "";
+		songTitle.val() = "";
+		songArtist.val() = "";
+		songAlbum.val() = "";
 	}
 }
 
-document.addEventListener("keypress", enterKeyPressed);
-submitButton.addEventListener("click", printNewSong);
+$(document).on("keypress", enterKeyPressed);
+submitButton.on("click", printNewSong);
 
 //===Songs added from JSON and then added to array===============
 var jsonSongs;
@@ -61,25 +61,29 @@ function parseJSONSongs() {
 		currentJson = jsonSongs.songs[i];
 
 		var printJson = `<div id="${counter}" class="dom">${currentJson.song_title} - by ${currentJson.band} on the album ${currentJson.album}</div><button class="delete">Delete</button>`;
-		songsDom.innerHTML += `<div id="songWrap">${printJson}</div>`;
+		songsDom.html() += `<div id="songWrap">${printJson}</div>`;
 		pushJsonSong();
 		deleteListener();
 	};
 }
 
 function pushJsonSong(){
-	var newJsonSong = document.getElementById(counter).innerHTML;
+	var newJsonSong = $(counter).html();
 		// console.log("newJsonSong", newJsonSong);
 		songs.push(newJsonSong);
 }
 
-var myRequest = new XMLHttpRequest();
-myRequest.addEventListener("load", parseJSONSongs);
-myRequest.open("GET", "songs.json");
-myRequest.send();
+$.ajax({
+	url: "songs.json"
+}).done(parseJSONSongs);
+
+// var myRequest = new XMLHttpRequest();
+// myRequest.on("load", parseJSONSongs);
+// myRequest.open("GET", "songs.json");
+// myRequest.send();
 
 //===Songs added from songs2.json and then added to array===============
-var moreButton = document.getElementById("more");
+var moreButton = $("#more");
 
 function moreSongs () {
 	var json2Songs;
@@ -91,30 +95,36 @@ function moreSongs () {
 			currentJson = json2Songs.songs[i];
 
 			var printJson = `<div id="${counter}" class="dom">${currentJson.song_title} - by ${currentJson.band} on the album ${currentJson.album}</div><button class="delete">Delete</button>`;
-			songsDom.innerHTML += `<div id="songWrap">${printJson}</div>`;
+			songsDom.html(`<div id="songWrap">${printJson}</div>`);
 			pushJsonSong();
 			deleteListener();
 		};
 	}
 
 	function pushJsonSong(){
-		var newJsonSong = document.getElementById(counter).innerHTML;
+		var newJsonSong = $(counter).html();
 			// console.log("newJsonSong", newJsonSong);
 			songs.push(newJsonSong);
+			// console.log("songs", songs); working?Yes
 	}
 
-	var myRequest = new XMLHttpRequest();
-	myRequest.addEventListener("load", parseJson2Songs);
-	myRequest.open("GET", "songs2.json");
-	myRequest.send();
+	$.ajax({
+		url: "songs2.json"
+	}).done(parseJSONSongs);
+
+	// var myRequest = new XMLHttpRequest();
+	// myRequest.addEventListener("load", parseJson2Songs);
+	// myRequest.open("GET", "songs2.json");
+	// myRequest.send();
+
 }
-moreButton.addEventListener("click", moreSongs);
+moreButton.on("click", moreSongs);
 
 //===Delete from DOM/array function for all songs==============
-var deleteButton = document.getElementsByClassName("delete");
+var deleteButton = $(".delete");
 function deleteListener() {
 	for (var i = 0; i < deleteButton.length; i++) {
-		deleteButton[i].addEventListener("click", deleteSong);
+		deleteButton[i].on("click", deleteSong);
 	}
 }
 

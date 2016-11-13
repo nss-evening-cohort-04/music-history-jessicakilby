@@ -1,3 +1,4 @@
+console.log("addview");
 var addLink = document.getElementById("link-add");
 var addView = document.getElementById("add-view");
 
